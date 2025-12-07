@@ -1,0 +1,68 @@
+---
+import Basico from '../layouts/Basico.astro';
+---
+
+<Basico title="Servicios">
+  <div class="min-h-screen bg-gradient-to-b from-white to-gray-50 py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- Título -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
+          Nuestros <span class="bg-gradient-to-r from-blue-600 to-indigo-700 text-transparent bg-clip-text">Servicios</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Soluciones tecnológicas completas, rápidas y confiables para tu hogar u oficina en la región de Aysén.
+        </p>
+      </div>
+
+      <!-- Grid de servicios -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        {[
+          {
+            icon: "🔧",
+            title: "Reparación de PCs y Laptops",
+            desc: "Diagnóstico rápido, limpieza, cambio de pantalla, disco duro, memoria y más. Recuperamos tus datos y alargamos la vida de tu equipo."
+          },
+          {
+            icon: "📶",
+            title: "Redes y WiFi",
+            desc: "Instalación y configuración de redes LAN y WiFi para que todo funcione sin cortes. Optimización de señal y seguridad de red."
+          },
+          {
+            icon: "🛠️",
+            title: "Soporte Técnico",
+            desc: "Remoto o presencial. Ayuda con software, virus, configuraciones, impresoras, correo y más. Atención personalizada y sin demoras."
+          },
+          {
+            icon: "🛡️",
+            title: "Mantenimiento Preventivo",
+            desc: "Evita fallas con limpieza interna, actualizaciones, respaldos programados y revisión de rendimiento. Tu equipo siempre al día."
+          }
+        ].map((servicio) => (
+          <div 
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 border border-gray-100"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-4xl">{servicio.icon}</span>
+              <h2 class="text-2xl font-bold text-gray-800">{servicio.title}</h2>
+            </div>
+            <p class="text-gray-600 leading-relaxed">{servicio.desc}</p>
+          </div>
+        ))}
+
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-16">
+        <a 
+          href="https://wa.me/56997701914" 
+          target="_blank"
+          class="bg-gradient-to-r from-green-500 to-green-600 text-white text-lg px-8 py-4 rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transition transform hover:scale-105 shadow-lg inline-block"
+        >
+          📱 Contáctame por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</Basico>

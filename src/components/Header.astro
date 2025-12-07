@@ -1,0 +1,66 @@
+---
+// src/components/Header.astro
+const año = new Date().getFullYear();
+---
+
+<header class="bg-white shadow-lg fixed w-full top-0 z-50 transition duration-300 hover:shadow-xl">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 group">
+      <img 
+        src="/images/logo.png" 
+        alt="Logo PC MAX AYSÉN" 
+        class="h-16 w-auto transition-transform duration-300 group-hover:scale-110"
+      />
+      <span class="sr-only">PC MAX AYSÉN</span>
+      <!-- Texto opcional si quieres mostrarlo -->
+      <span class="text-xl font-bold text-gray-800 hidden md:block ml-2">PC MAX AYSÉN</span>
+    </a>
+
+    <!-- Menú Desktop -->
+    <nav class="hidden md:flex space-x-10">
+      {[
+        { name: "Inicio", href: "/" },
+        { name: "Servicios", href: "/servicios" },
+        { name: "Sobre mí", href: "/acerca" }
+      ].map((item) => (
+        <a 
+          href={item.href} 
+          class="text-gray-700 hover:text-blue-600 font-medium relative group transition"
+        >
+          {item.name}
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-700 group-hover:w-full transition-all duration-300"></span>
+        </a>
+      ))}
+    </nav>
+
+    <!-- Botón WhatsApp (Desktop) -->
+    <a 
+      href="https://wa.me/56997701914" 
+      target="_blank"
+      class="hidden md:block bg-gradient-to-r from-green-500 to-green-600 text-white text-sm font-semibold px-5 py-2 rounded-full hover:from-green-600 hover:to-green-700 transition transform hover:scale-105 shadow-md"
+    >
+      📱 WhatsApp
+    </a>
+
+    <!-- Menú Móvil (Hamburguesa) -->
+    <div class="md:hidden flex items-center gap-4">
+      <!-- Botón WhatsApp en móvil -->
+      <a 
+        href="https://wa.me/56997701914" 
+        target="_blank"
+        class="bg-green-500 text-white p-2 rounded-full text-sm hover:bg-green-600 transition"
+      >
+        📱
+      </a>
+
+      <!-- Botón de menú hamburguesa -->
+      <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>

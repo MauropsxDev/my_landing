@@ -1,0 +1,38 @@
+---
+// src/layouts/Basico.astro
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css'; // Tailwind + variables globales
+
+const { title, description = "Servicios informáticos profesionales para hogar y oficina." } = Astro.props;
+const siteTitle = "PC MAX AYSÉN";
+---
+
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title} | {siteTitle}</title>
+  <meta name="description" content={description} />
+
+  <!-- Preconnect para Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fuente principal: Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col font-sans">
+  <Header />
+
+  <!-- Main con padding-top según altura del header -->
+  <!-- pt-[80px] = 80px; ajusta si tu header cambia de tamaño -->
+  <main class="flex-grow pt-[80px]">
+    <slot />
+  </main>
+
+  <Footer />
+</body>
+</html>

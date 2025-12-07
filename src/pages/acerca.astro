@@ -1,0 +1,77 @@
+---
+import Basico from '../layouts/Basico.astro';
+---
+
+<Basico title="Sobre mí">
+  <div class="min-h-screen bg-gray-50 py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Sección: Sobre mí -->
+      <section class="text-center mb-20">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+          Sobre <span class="bg-gradient-to-r from-blue-600 to-indigo-700 text-transparent bg-clip-text">PC MAX AYSÉN</span>
+        </h1>
+        <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Hola, soy <strong>Mauricio Sandoval</strong>, Ingeniero informático con más de <strong>15 años de experiencia</strong> en reparación de computadores, instalación de redes y soporte técnico en la región de Aysén.
+        </p>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-4">
+          Mi compromiso es ofrecer un servicio <strong>rápido, honesto y personalizado</strong>, ya sea en tu hogar u oficina. No trabajo con tiempos de espera innecesarios ni precios ocultos.
+        </p>
+      </section>
+
+      <!-- Sección: Foto (opcional) -->
+      <!-- Si tienes una foto, descomenta esta sección -->
+      <!--
+      <section class="flex justify-center mb-20">
+        <img 
+          src="/images/perfil.jpg" 
+          alt="Técnico informático en Aysén" 
+          class="w-40 h-40 object-cover rounded-full border-4 border-white shadow-lg"
+        />
+      </section>
+      -->
+
+      <!-- Sección: Galería de trabajos -->
+      <section>
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          Algunos de mis <span class="text-blue-600">trabajos</span>
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            { img: "/images/trabajo1.jpg", title: "Reparación de laptop" },
+            { img: "/images/trabajo2.jpg", title: "Instalación de red WiFi" },
+            { img: "/images/trabajo3.jpg", title: "Limpieza interna de PC" },
+            { img: "/images/trabajo4.jpg", title: "Soporte remoto" },
+            { img: "/images/trabajo5.jpg", title: "Mantenimiento preventivo" },
+            { img: "/images/trabajo6.jpg", title: "Configuración de impresora" }
+          ].map((item) => (
+            <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
+              <img 
+                src={item.img} 
+                alt={item.title} 
+                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-800">{item.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA final -->
+      <div class="text-center mt-16">
+        <p class="text-lg text-gray-600 mb-6">¿Necesitas ayuda con tu computador o red?</p>
+        <a 
+          href="https://wa.me/56997701914" 
+          target="_blank"
+          class="bg-gradient-to-r from-green-500 to-green-600 text-white text-lg px-8 py-4 rounded-xl font-semibold hover:from-green-600 hover:to-green-700 transition transform hover:scale-105 shadow-lg inline-block"
+        >
+          📱 Escríbeme por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</Basico>

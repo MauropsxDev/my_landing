@@ -1,0 +1,34 @@
+---
+import Basico from '../layouts/Basico.astro';
+---
+
+<Basico title="Inicio">
+  <div class="pt-16 pb-16 px-6 min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+        Soluciones Tecnológicas
+        <span class="bg-gradient-to-r from-blue-600 to-indigo-700 text-transparent bg-clip-text"> a tu alcance</span>
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        Reparación, redes, soporte técnico y asesoría personalizada para hogar y oficina. 
+        Rápido, confiable y a domicilio.
+      </p>
+
+      <a 
+        href="/servicios" 
+        class="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-xl font-semibold transition transform hover:scale-105 shadow-lg inline-block"
+      >
+        Ver servicios
+      </a>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-gray-500">
+        <div class="flex items-center gap-2">
+          📞 <span class="text-sm">+56 9 97701914</span>
+        </div>
+        <div class="flex items-center gap-2">
+          📧 <span class="text-sm">pcmaxaysen@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</Basico>
